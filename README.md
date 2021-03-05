@@ -1,6 +1,6 @@
 # Estudos
 
-O objetivo deste repositório é organizar e agrupar meus códigos relacionados ao aprendizado de algumas linguagens, bibliotecas e frameworks
+O objetivo deste repositório é organizar e agrupar meus códigos relacionados ao aprendizado de algumas **linguagens**, **bibliotecas** e **frameworks**
 
 #### Por enquanto meus estudos publicados nesse repositório estão assim:
  - [C++](https://github.com/Pereira-Araujo/Estudos/tree/main/C%2B%2B_learning)
