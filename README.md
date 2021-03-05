@@ -8,6 +8,6 @@ O objetivo deste repositório é organizar e agrupar meus códigos relacionados 
  - [React](https://github.com/Pereira-Araujo/Estudos/tree/main/React_Js_learning)
 
 
- ![Programando alucinadamente](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi3G3F98wrn2eYJKryfYlYLDR9yoWVuQ343Q&usqp=CAU)
+ ![Programando alucinadamente](https://media.giphy.com/media/13HgwGsXF0aiGY/source.gif)
 
 
