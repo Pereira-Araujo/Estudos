@@ -7,6 +7,8 @@ O objetivo deste repositório é organizar e agrupar meus códigos relacionados 
  - [JS](https://github.com/Pereira-Araujo/Estudos/tree/main/Js_learning)
  - [React](https://github.com/Pereira-Araujo/Estudos/tree/main/React_Js_learning)
 
+- *Nota* :Cada pasta possui um arquivo ReadMe.md explicando como a mesma está organizada.
+
 
  <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/021/951/101.gif" alt="programando"/>
 
