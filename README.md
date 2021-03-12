@@ -1,4 +1,6 @@
 # Estudos
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 O objetivo deste repositório é organizar e agrupar meus códigos relacionados ao aprendizado de algumas **linguagens**, **bibliotecas** e **frameworks**
 
