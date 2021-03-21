@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "newSolidityProject",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
