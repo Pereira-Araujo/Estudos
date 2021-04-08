@@ -10,9 +10,8 @@ int main()
   {
 
     ponteiro = &vetor[index];
-
     cout << '\n'
-         << " O endereço do item " << index << " do vetor é " << ponteiro;
+         << " O endereço do item " << index << " do vetor é " << ponteiro <<endl;
   }
 
   return 0;
