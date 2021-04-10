@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <main>
+      <input type="number" id="inicioPartida" /><span>Inicio da Partida</span>
+      <input type="number" id="fimPartida" /><span>Final da Partida</span>
+
+      <section>
+        <button type="button" onclick="duracaoXadrez(inicioPartida,fimPartida)">
+          Calcular
+        </button>
+      </section>
+
+      <p>Duração total da partida</p>
+      <p id="demo"></p>
+    </main>
+    <script src="desafio8.js"></script>
+  </body>
+</html>
