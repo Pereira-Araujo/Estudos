@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+  }
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: aquamarine;
+    height: 100vh;
+  }
+  section {
+    background: white;
+    border-radius: 2%;
+    width: 16rem;
+    height: 14rem;
+    text-align: center;
+    padding:1rem;
+  
+  }
