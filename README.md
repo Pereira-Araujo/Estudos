@@ -12,6 +12,7 @@ O objetivo deste repositório é organizar e agrupar meus códigos relacionados 
   <a href="https://github.com/Pereira-Araujo/Estudos/tree/main/Js_learning"><img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/></a>
    <a href="https://github.com/Pereira-Araujo/Estudos/tree/main/React_Js_learning"><img alt="React" src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/></a>
   <a href="https://github.com/Pereira-Araujo/Estudos/tree/main/Solidity_learning"><img alt="React" src="https://img.shields.io/badge/solidity%20-%2320232a.svg?style=for-the-badge&logo=solidity&appveyor"/></a>
+  <a href="https://github.com/Pereira-Araujo/Estudos/tree/main/Node_learning"><img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/></a>
 
 
 - *Nota* :Cada pasta possui um arquivo ReadMe.md explicando como a mesma está organizada.
