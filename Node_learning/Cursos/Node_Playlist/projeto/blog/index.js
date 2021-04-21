@@ -6,10 +6,9 @@
 
 const express = require('express');
 const handlebars = require('express-handlebars')
-const Sequelize = require('sequelize')
 const bodyParser = require('body-parser')
 const app = express()
-
+const Post = require('./models/Post')
 
 // Config
 // template engine
@@ -21,25 +20,37 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
 
-// Conexão c/ banco de dados MySql
-const sequelize = new Sequelize('teste','root', 'kadosh17',{
-  host:'localhost',
-  dialect:'mysql'
-})
-
-
 // Rotas
+
+app.get('/',(req, res)=>{
+    Post.findAll({order:[['id', 'DESC']]}).then((posts)=>{
+    res.render('home',{posts:posts}) 
+  })
+})
 
 app.get('/cadastro',(req, res)=>{
   res.render('formulario') // o caminho fica explicito por causa do handlebars
 })
 
 app.post('/add',(req,res)=>{
-  let titulo = req.body.titulo
-  let texto = req.body.conteudo
-  res.send(`<h3>${titulo}</h3> <div>${texto}</div>` )
+ Post.create({
+   titulo:req.body.titulo,
+   conteudo:req.body.conteudo
+ }).then(()=>{
+   res.redirect('/')
+ }).catch((error)=>{
+   res.send(`Desculpe, mas houve algum erro: ${error}`)
+ })
 })
 
+app.get('/deletar/:id', (req,res)=>{
+  Post.destroy({where:{'id':req.params.id}}).then(()=>{
+     res.render('delete')
+  }).catch(()=>{
+    res.send('Esta postagem não existe')
+  })
+
+})
 
 app.listen(8081,()=>{
   console.log('Rodando')
