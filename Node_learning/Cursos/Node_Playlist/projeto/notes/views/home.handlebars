@@ -1,4 +1,22 @@
 <style>
+
+  *{
+    margin:0;
+    padding:0;
+  }
+  a{
+    text-decoration:none;
+    color:gray;
+
+  }
+  a:hover{
+        color:inherit;
+
+  }
+
+  .topo{
+    margin:2rem;
+  }
   .container{
         display:flex;
         
@@ -7,8 +25,9 @@
     border:0.5px solid rgba(94, 92, 92, 0.671);
     width:14rem;
     height:12rem;
-    margin:0.5rem;
+    margin:2rem;
 }
+
 .card__topo{
     background:rgb(255, 209, 93);
     height:3rem;
@@ -23,23 +42,26 @@
     font-size:1.1rem;
 }
 .card__texto{
-    height: 5.2rem;
+    height: 7rem;
+    margin-left:0.5rem;
+    padding-top:0.5rem;
     word-break: break-word;
     overflow-y: auto;
 }
 .card__botao{
     float:right;
-    text-decoration:none;
-    color:gray;
-}
-.card__botao--hover:hover{
-    color:inherit;
+    
 }
 </style>
 
-<h2>
-  Lista de posts:
-</h2>
+<main>
+  <article class='topo'>
+<h2>Lista de posts:</h2>
+<a class='criar' href='/cadastro'>
+  Criar +
+</a>
+</article>
+
 <section class='container'>
   {{#each posts}}
     <section class='card'>
@@ -54,10 +76,10 @@
       <p class='card__texto'>
         {{dataValues.conteudo}}
       </p>
-      <a class='card__botao card__botao--hover'
-        href="/deletar/{{dataValues.id}}">
+      <a class='card__botao' href="/deletar/{{dataValues.id}}">
         deletar
       </a>
     </section>
   {{/each}}
 </section>
+</main>
