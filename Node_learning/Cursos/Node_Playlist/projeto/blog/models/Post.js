@@ -6,6 +6,9 @@ const Post = data.sequelize.define('posts',{
        },
     conteudo:{
         type: data.Sequelize.TEXT
+    },
+    autor:{
+        type:data.Sequelize.STRING
     }
 })
 

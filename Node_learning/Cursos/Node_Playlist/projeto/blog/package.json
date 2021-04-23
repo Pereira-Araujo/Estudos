@@ -10,9 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "build": "^0.1.4",
     "express": "^4.17.1",
     "handlebars": "^4.7.7",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.2",
+    "surge": "^0.23.0"
   }
 }

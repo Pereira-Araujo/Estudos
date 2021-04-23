@@ -1,13 +1,63 @@
-<h2>Lista de posts:</h2>
+<style>
+  .container{
+        display:flex;
+        
+    }
+.card{
+    border:0.5px solid rgba(94, 92, 92, 0.671);
+    width:14rem;
+    height:12rem;
+    margin:0.5rem;
+}
+.card__topo{
+    background:rgb(255, 209, 93);
+    height:3rem;
+    padding:2px;
+    display:flex;
+    align-items:flex-end;
+    justify-content: space-between;
+}
 
-{{#each posts}}
-    <div>
-    <h3>{{dataValues.titulo}}</h3>
-    <p>{{dataValues.conteudo}}</p>
-    <a href='/deletar/{{dataValues.id}}'><button>DELETAR</button></a>
-    
-    </div>
+.card__titulo{
+    font-weight:bold;
+    font-size:1.1rem;
+}
+.card__texto{
+    height: 5.2rem;
+    word-break: break-word;
+    overflow-y: auto;
+}
+.card__botao{
+    float:right;
+    text-decoration:none;
+    color:gray;
+}
+.card__botao--hover:hover{
+    color:inherit;
+}
+</style>
 
-{{/each}}
-
-
+<h2>
+  Lista de posts:
+</h2>
+<section class='container'>
+  {{#each posts}}
+    <section class='card'>
+      <div class='card__topo'>
+        <span class='card__titulo'>
+          {{dataValues.titulo}}
+        </span>
+        <span class='card__autor'>
+          {{dataValues.autor}}
+        </span>
+      </div>
+      <p class='card__texto'>
+        {{dataValues.conteudo}}
+      </p>
+      <a class='card__botao card__botao--hover'
+        href="/deletar/{{dataValues.id}}">
+        deletar
+      </a>
+    </section>
+  {{/each}}
+</section>

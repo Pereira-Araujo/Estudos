@@ -15,6 +15,7 @@ const Post = require('./models/Post')
 app.engine('handlebars', handlebars({defaultLayout:'main'}))
 app.set('view engine', 'handlebars')
 
+
 // Body parser
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
@@ -24,7 +25,7 @@ app.use(bodyParser.json())
 
 app.get('/',(req, res)=>{
     Post.findAll({order:[['id', 'DESC']]}).then((posts)=>{
-    res.render('home',{posts:posts}) 
+    res.render('home',{ posts:posts}) 
   })
 })
 
@@ -35,6 +36,7 @@ app.get('/cadastro',(req, res)=>{
 app.post('/add',(req,res)=>{
  Post.create({
    titulo:req.body.titulo,
+   autor:req.body.autor,
    conteudo:req.body.conteudo
  }).then(()=>{
    res.redirect('/')
