@@ -1,3 +1,8 @@
+/*
+Faça uma função que receba um array de números e devolva um objeto que contenha as informações: 
+maior número e menor número 
+*/
+
 const maiorMenor = (array) => {
 
     let menor = Math.min(...array)
