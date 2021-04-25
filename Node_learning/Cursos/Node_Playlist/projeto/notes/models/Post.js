@@ -12,6 +12,7 @@ const Post = data.sequelize.define('posts',{
     }
 })
 
+// Descomente a linha abaixo para criar as respectivas colunas no Banco de Dados local
 // Post.sync({force:true})
 
 module.exports = Post

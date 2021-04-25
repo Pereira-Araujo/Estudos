@@ -2,11 +2,12 @@
 const Sequelize = require('sequelize')
 
 // Conexão c/ banco de dados MySql
-const sequelize = new Sequelize('appblog','root', 'kadosh17',{
-    host:'localhost',
-    dialect:'mysql'
-  })
-  
+// const sequelize = new Sequelize('{nome-do-banco-de-dados}','root', '{senha-mySql}',{
+//     host:'localhost',
+//     dialect:'mysql'
+//   })
+
+ 
   module.exports = {
       Sequelize: Sequelize,
       sequelize: sequelize
