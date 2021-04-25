@@ -1,6 +1,6 @@
 ## Notas app
 
-- Este é um projeto integrador utilizando **Node.Js** e Banco de Dados **MySQL** em conjunto com *handlebars, body-parser, expresse* e *sequelize*.
+- Este é um projeto integrador (relativo às aulas de 4 à 10) utilizando **Node.Js** e Banco de Dados **MySQL** em conjunto com *handlebars, body-parser, expresse* e *sequelize*.
 
 <img src='https://user-images.githubusercontent.com/60116988/115977562-cae5f680-a54f-11eb-9084-2ce0e755c2c8.png' width=40%/>
 
