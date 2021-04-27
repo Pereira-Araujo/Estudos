@@ -2,7 +2,7 @@
 
 #### Um exercício para recapitular um pouco o uso do *DOM*, *Switch Case* e *Objeto Date*
 
-- Resultado por ser conferido [**aqui**](https://replit.com/@Araujocoding/calendario#index.html)
+- Resultado por ser conferido [**aqui**](https://calendario.araujocoding.repl.co/)
  
  Sobre o exercício:
   - É um card que representa a data e hora de modo atualizado/automático
