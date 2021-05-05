@@ -1,20 +1,41 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
+
 import {Container,Card, BlockLeft,BlockRight, RandomButtom,TagContainer,Tag} from './style'
 
 import Chuck_Avatar from '../assets/chuck_image.jfif'
 
 
 function Home() {
+   let jokeCategory
+
     const [categories, setCategories] = useState([])
+    const [search, setSearch] = useState('')
     const [random, setRandom] = useState('')
+    const [filter, setFilter]= useState([])
+    const [change, setChange] = useState(false)
      
     const getRandom = ()=>{
         axios
         .get("https://api.chucknorris.io/jokes/random")
         .then((response) => {
           setRandom(response.data.value)
+          setChange(false)
+
         })
+    }
+
+    const onChangeFind = (event)=>{
+      setSearch(event.target.value)
+
+    }
+
+    const find = ()=>{
+      axios.get(`https://api.chucknorris.io/jokes/search?query=${search}`).then((response)=>{
+        setChange(true)
+        setFilter(response.data.result)
+        setSearch('')
+      })
     }
 
     const getCategories= ()=>{
@@ -23,18 +44,38 @@ function Home() {
         })
           }
 
+    const changeCategories = (joke) =>{
+     
+       jokeCategory = joke
 
+      getJokesByCategories()
 
-    useEffect(()=>{
-        getCategories()
-    })
+    }      
 
-   const categoriesMapped = categories.map((category)=>{
+    const  getJokesByCategories = async ()=>{
+
+      const result = await axios.get(`https://api.chucknorris.io/jokes/random?category=${jokeCategory}`)
+      setRandom(result.data.value)
+      setChange(false)
+
+        }
+   
+
+   const categoriesMapped = categories.map((nameCategory)=>{
     return(
-        <Tag>{category}</Tag>
+        <Tag key={nameCategory} onClick={() => changeCategories(nameCategory)}>{nameCategory}</Tag>
        
     )})
-    
+
+    const searchFiltered = filter.map((item)=>{
+      return <p>{item.value}</p>
+        
+    })
+
+       useEffect(()=>{
+           getCategories()
+      },[])
+
     return (
       <Container>
      <BlockLeft>
@@ -45,12 +86,14 @@ function Home() {
          </Card>
          <TagContainer>
          {categoriesMapped}
+         <input onChange={onChangeFind} value={search}/><button onClick={find}>go</button>
         </TagContainer>
      </BlockLeft>
      <BlockRight>
-     {random}
-     </BlockRight>
 
+     
+     {change === false ? (<>{random}</>):(<>{searchFiltered}</>) }
+    </BlockRight>
       </Container>
     );
   }
