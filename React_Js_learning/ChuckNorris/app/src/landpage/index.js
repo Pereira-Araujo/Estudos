@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 
-import {Container,Card, BlockLeft,BlockRight, RandomButtom,TagContainer,Tag} from './style'
+import {Container,Card, BlockLeft,BlockRight,Search, RandomButtom,TagContainer,Tag} from './style'
 
 import Chuck_Avatar from '../assets/chuck_image.jfif'
 
@@ -84,14 +84,16 @@ function Home() {
          <img alt={'Rosto do chuck Norris sorrindo'} src={Chuck_Avatar}/>
          <RandomButtom onClick={getRandom}>Random</RandomButtom>
          </Card>
+
          <TagContainer>
          {categoriesMapped}
-         <input onChange={onChangeFind} value={search}/><button onClick={find}>go</button>
         </TagContainer>
+        
+        <Search onChange={onChangeFind} value={search}/><button onClick={find}>go</button>
+
      </BlockLeft>
      <BlockRight>
 
-     
      {change === false ? (<>{random}</>):(<>{searchFiltered}</>) }
     </BlockRight>
       </Container>

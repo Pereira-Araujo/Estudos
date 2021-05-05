@@ -4,16 +4,21 @@ import styled from 'styled-components'
 
 export const Container = styled.main`
 height:100vh;
+width:100vw;
 display:flex;
 align-items:center;
+justify-content:center;
 
 `
 export const BlockRight = styled.main`
-width:40rem;
+width:60%;
+height:80%;
+margin-left:0.5rem;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
+overflow-y: auto;
 
 `
 
@@ -24,9 +29,7 @@ flex-direction:column;
 align-items:center;
 `
  export const BlockLeft = styled.section`
-
 margin-left:2rem;
-
 `
 
 export const RandomButtom = styled.section`
@@ -53,4 +56,10 @@ export const Tag = styled.p`
 border:1px solid orange;
 padding:0.5rem;
 margin-top:0;
+`
+
+export const Search = styled.input`
+border:coral solid 1px;
+outline:none;
+float:right;
 `
