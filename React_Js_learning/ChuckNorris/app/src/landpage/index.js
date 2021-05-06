@@ -1,9 +1,9 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 
-import {Container,Card, BlockLeft,BlockRight,Search, RandomButtom,TagContainer,Tag} from './style'
+import {Container,Card,Chuck, BlockLeft,BlockRight,Search,ButtonSearch, RandomButtom,TagContainer,Tag,SearchContainer} from './style'
 
-import Chuck_Avatar from '../assets/chuck_image.jfif'
+import Chuck_Avatar from '../assets/chuck_image.png'
 
 
 function Home() {
@@ -30,7 +30,8 @@ function Home() {
 
     }
 
-    const find = ()=>{
+    const find = (event)=>{
+      event.preventDefault();
       axios.get(`https://api.chucknorris.io/jokes/search?query=${search}`).then((response)=>{
         setChange(true)
         setFilter(response.data.result)
@@ -81,20 +82,20 @@ function Home() {
      <BlockLeft>
          <Card>
          <h1>Chuck Norris Jokes</h1>
-         <img alt={'Rosto do chuck Norris sorrindo'} src={Chuck_Avatar}/>
-         <RandomButtom onClick={getRandom}>Random</RandomButtom>
+         <Chuck alt={'Rosto do chuck Norris sorrindo'} src={Chuck_Avatar}/>
          </Card>
-
+        
+         <SearchContainer onSubmit={find}>
+         <Search placeholder={'search'}onChange={onChangeFind} value={search}/><ButtonSearch type={'submit'}>go</ButtonSearch>
+         </SearchContainer>
          <TagContainer>
          {categoriesMapped}
         </TagContainer>
-        
-        <Search onChange={onChangeFind} value={search}/><button onClick={find}>go</button>
-
+        <RandomButtom onClick={getRandom}>Random</RandomButtom>
      </BlockLeft>
-     <BlockRight>
 
-     {change === false ? (<>{random}</>):(<>{searchFiltered}</>) }
+     <BlockRight>
+     <div>{change === false ? (<>{random}</>):(<>{searchFiltered}</>) }</div>
     </BlockRight>
       </Container>
     );
