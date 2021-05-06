@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
-
+import BASE_URL from '../constant/url'
 import {Container,Card,Chuck, BlockLeft,BlockRight,Search,ButtonSearch, RandomButtom,TagContainer,Tag,SearchContainer} from './style'
 
 import Chuck_Avatar from '../assets/chuck_image.png'
@@ -17,7 +17,7 @@ function Home() {
      
     const getRandom = ()=>{
         axios
-        .get("https://api.chucknorris.io/jokes/random")
+        .get(`${BASE_URL}random`)
         .then((response) => {
           setRandom(response.data.value)
           setChange(false)
@@ -32,7 +32,7 @@ function Home() {
 
     const find = (event)=>{
       event.preventDefault();
-      axios.get(`https://api.chucknorris.io/jokes/search?query=${search}`).then((response)=>{
+      axios.get(`${BASE_URL}search?query=${search}`).then((response)=>{
         setChange(true)
         setFilter(response.data.result)
         setSearch('')
@@ -40,7 +40,7 @@ function Home() {
     }
 
     const getCategories= ()=>{
-        axios.get('https://api.chucknorris.io/jokes/categories').then((response)=>{
+        axios.get(`${BASE_URL}categories`).then((response)=>{
           setCategories(response.data)
         })
           }
@@ -55,7 +55,7 @@ function Home() {
 
     const  getJokesByCategories = async ()=>{
 
-      const result = await axios.get(`https://api.chucknorris.io/jokes/random?category=${jokeCategory}`)
+      const result = await axios.get(`${BASE_URL}random?category=${jokeCategory}`)
       setRandom(result.data.value)
       setChange(false)
 
