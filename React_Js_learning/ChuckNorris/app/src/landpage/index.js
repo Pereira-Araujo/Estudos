@@ -15,21 +15,10 @@ function Home() {
     const [filter, setFilter]= useState([])
     const [change, setChange] = useState(false)
      
-    const getRandom = ()=>{
-        axios
-        .get(`${BASE_URL}random`)
-        .then((response) => {
-          setRandom(response.data.value)
-          setChange(false)
-
-        })
-    }
-
     const onChangeFind = (event)=>{
       setSearch(event.target.value)
-
     }
-
+   
     const find = (event)=>{
       event.preventDefault();
       axios.get(`${BASE_URL}search?query=${search}`).then((response)=>{
@@ -40,38 +29,40 @@ function Home() {
     }
 
     const getCategories= ()=>{
-        axios.get(`${BASE_URL}categories`).then((response)=>{
-          setCategories(response.data)
-        })
-          }
+      axios.get(`${BASE_URL}categories`).then((response)=>{
+        setCategories(response.data)
+      })
+    }
 
     const changeCategories = (joke) =>{
-     
-       jokeCategory = joke
-
+    jokeCategory = joke
       getJokesByCategories()
-
     }      
 
-    const  getJokesByCategories = async ()=>{
-
+    const getJokesByCategories = async ()=>{
       const result = await axios.get(`${BASE_URL}random?category=${jokeCategory}`)
-      setRandom(result.data.value)
-      setChange(false)
+        setRandom(result.data.value)
+         setChange(false)
+      }
+ 
+    const getRandom = ()=>{
+        axios
+        .get(`${BASE_URL}random`)
+        .then((response) => {
+          setRandom(response.data.value)
+          setChange(false)
+        })
+      }
 
-        }
-   
-
-   const categoriesMapped = categories.map((nameCategory)=>{
+    const categoriesMapped = categories.map((nameCategory)=>{
     return(
-        <Tag key={nameCategory} onClick={() => changeCategories(nameCategory)}>{nameCategory}</Tag>
-       
-    )})
+        <Tag key={nameCategory} onClick={() => changeCategories(nameCategory)}>
+          {nameCategory}
+        </Tag> )})
 
     const searchFiltered = filter.map((item)=>{
       return <p>{item.value}</p>
-        
-    })
+        })
 
        useEffect(()=>{
            getCategories()
@@ -94,7 +85,7 @@ function Home() {
         <RandomButtom onClick={getRandom}>Random</RandomButtom>
      </BlockLeft>
 
-     <BlockRight>
+    <BlockRight>
      <div>{change === false ? (<>{random}</>):(<>{searchFiltered}</>) }</div>
     </BlockRight>
       </Container>
