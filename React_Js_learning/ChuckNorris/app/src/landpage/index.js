@@ -1,7 +1,16 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
 import BASE_URL from '../constant/url'
-import {Container,Card,Chuck, BlockLeft,BlockRight,Search,ButtonSearch, RandomButtom,TagContainer,Tag,SearchContainer} from './style'
+import {Container,
+  Card,Chuck, 
+  BlockLeft,
+  BlockRight,
+  Search,
+  ButtonSearch,
+  RandomButtom,
+  TagContainer,
+  Tag,
+  SearchContainer} from './style'
 
 import Chuck_Avatar from '../assets/chuck_image.png'
 
