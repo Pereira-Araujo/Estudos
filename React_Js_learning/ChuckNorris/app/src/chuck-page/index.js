@@ -2,7 +2,7 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 import BASE_URL from '../constant/url'
 import {Container,
-  Card,Chuck, 
+  Card,ChuckPhoto, 
   BlockLeft,
   BlockRight,
   Search,
@@ -68,7 +68,8 @@ function Home() {
         <Tag key={nameCategory} onClick={() => changeCategories(nameCategory)}>
           {nameCategory}
         </Tag> )})
-
+   
+   
     const searchFiltered = filter.map((item)=>{
       return <p>{item.value}</p>
         })
@@ -82,7 +83,7 @@ function Home() {
      <BlockLeft>
          <Card>
          <h1>Chuck Norris Jokes</h1>
-         <Chuck alt={'Rosto do chuck Norris sorrindo'} src={Chuck_Avatar}/>
+         <ChuckPhoto alt={'Rosto do chuck Norris sorrindo'} src={Chuck_Avatar}/>
          </Card>
         
          <SearchContainer onSubmit={find}>

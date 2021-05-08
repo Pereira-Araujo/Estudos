@@ -1,4 +1,4 @@
-import Home from './landpage/index'
+import Home from './chuck-page/index'
 
 function App() {
   return (
