@@ -2,7 +2,7 @@
 
 Um estudo leve com React: criar uma página consumindo a API [**chuck-api**](https://api.chucknorris.io/#!)
 
-- O resultado pode ser visto  <a href='https://chuck-norris-jokes.araujocoding.repl.co/'><img alt="Repl.it" src="https://img.shields.io/badge/Repl.it-%230D101E.svg?&style=for-the-badge&logo=Repl.it&logoColor=white"/></a>
+- O resultado pode ser visto aqui <a href='https://chuck-norris-jokes.araujocoding.repl.co/'><img alt="Repl.it" src="https://img.shields.io/badge/Repl.it-%230D101E.svg?&style=for-the-badge&logo=Repl.it&logoColor=white"/></a>
 
 **Objetivos**
 - Consolidar meus conhecimentos sobre Hooks,
