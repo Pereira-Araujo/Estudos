@@ -34,6 +34,17 @@ export const Container = styled.main`
     width: 20rem;
     height: 20rem;
     `
+
+    export const ChuckCaracter = styled.img`
+    width: 30rem;
+    height: 20rem;
+
+    @media (max-width: 980px) {
+      width:18rem;
+      height:10rem;
+  }
+    `
+
    export const SearchContainer = styled.form`
     margin-top: 0.5rem;
     `

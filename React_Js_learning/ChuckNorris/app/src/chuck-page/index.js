@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import BASE_URL from '../constant/url'
 import {Container,
   Card,ChuckPhoto, 
+  ChuckCaracter,
   BlockLeft,
   BlockRight,
   Search,
@@ -13,6 +14,7 @@ import {Container,
   SearchContainer} from './style'
 
 import Chuck_Avatar from '../assets/chuck_image.png'
+import Chuck_Logo from '../assets/logo_chuck.png'
 
 
 function Home() {
@@ -20,7 +22,7 @@ function Home() {
 
     const [categories, setCategories] = useState([])
     const [search, setSearch] = useState('')
-    const [random, setRandom] = useState('')
+    const [random, setRandom] = useState(<ChuckCaracter src={Chuck_Logo} alt='Desenho do Chuck Norris'/>)
     const [filter, setFilter]= useState([])
     const [change, setChange] = useState(false)
      
