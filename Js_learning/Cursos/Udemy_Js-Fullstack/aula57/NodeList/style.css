@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(130, 207, 182);
+    height: 100vh;
+  }
+  section {
+    background: white;
+    border-radius: 2%;
+    width: 16rem;
+    height: 18rem;
+    padding:1rem;
+    
+  }
