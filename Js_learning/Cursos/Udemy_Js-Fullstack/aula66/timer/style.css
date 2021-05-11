@@ -22,10 +22,17 @@
   }
   
   .botoes button{
-  background:white;
+    background:white;
+    border:none;
+    border:1px solid rgb(68, 136, 113);
+    padding: 5px;
+  }
+  .botoes button:active{
+    background:rgb(68, 136, 113);
+    color:white;
   }
   
-  
+  /* Acionado pelo JS */
   .cor-pausa{
     color:rgb(39, 82, 102);
   }
