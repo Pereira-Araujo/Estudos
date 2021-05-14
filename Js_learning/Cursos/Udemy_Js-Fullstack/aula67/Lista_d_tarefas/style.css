@@ -8,10 +8,13 @@
     background: aquamarine;
     height: 100vh;
   }
-  section {
+  .card {
     background: white;
     border-radius: 2%;
     width: 16rem;
     height: 18rem;
-    text-align: center;
   }
+.card__header{
+    text-align: center;
+
+}
