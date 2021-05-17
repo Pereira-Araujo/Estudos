@@ -18,3 +18,14 @@
     text-align: center;
 
 }
+
+.button__clear{
+  background:white;
+  border:none;
+  width:1rem;
+  height:1rem;
+  
+}
+.button__clear:hover{
+  filter:opacity(50%);
+}
