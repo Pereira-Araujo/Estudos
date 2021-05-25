@@ -6,6 +6,9 @@
 
 O objetivo deste repositório é organizar e agrupar meus códigos relacionados ao aprendizado de algumas **linguagens**, **bibliotecas** e **frameworks**
 
+- ***Nota* :Cada pasta possui um arquivo ReadMe.md explicando como a mesma está organizada.**
+
+
 #### Por enquanto meus estudos publicados nesse repositório estão assim(Clique para saber mais):
 
    <a href="https://github.com/Pereira-Araujo/Estudos/tree/main/C%2B%2B_learning"><img alt="C++" src="https://img.shields.io/badge/c++%20-%2300599C.svg?&style=for-the-badge&logo=c%2B%2B&ogoColor=white"/></a>
@@ -15,7 +18,6 @@ O objetivo deste repositório é organizar e agrupar meus códigos relacionados 
   <a href="https://github.com/Pereira-Araujo/Estudos/tree/main/Node_learning"><img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/></a>
 
 
-- *Nota* :Cada pasta possui um arquivo ReadMe.md explicando como a mesma está organizada.
 
 
  <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/021/951/101.gif" alt="programando"/>
