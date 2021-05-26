@@ -3,35 +3,29 @@ const router = express.Router();
 
 router.get("/", (req, res, next) => {
   res.status(200).send({
-    message: "Retorna todos os produtos",
+    message: "Retorna todos os pedidos",
   });
 });
 
 router.post("/", (req, res, next) => {
   res.status(201).send({
-    message: "Adiciona novos produtos",
+    message: "Adiciona novo pedido",
   });
 });
 
-router.get("/:id_product", (req, res, next) => {
-  const id = req.params.id_product;
+router.get("/:id_request", (req, res, next) => {
+  const id = req.params.id_request;
 
   res.status(200).send({
-    message: "Retorna um novo produto",
+    message: "Retorna um pedido",
     id: id,
   });
 });
 
-// ALTERA
-router.patch("/", (req, res, next) => {
-  res.status(201).send({
-    message: "Altera produtos",
-  });
-});
 
 router.delete("/", (req, res, next) => {
   res.status(201).send({
-    message: "Deleta os produtos",
+    message: "Deleta pedidos",
   });
 });
 
