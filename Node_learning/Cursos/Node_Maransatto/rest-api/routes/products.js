@@ -8,10 +8,17 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
+  const product = {
+    name:req.body.name,
+    price:req.body.price,
+    image:req.body.image,
+  }
   res.status(201).send({
-    message: "Adiciona novos produtos",
+      message: "Adiciona novos produtos",
+      productCreated:product
   });
 });
+
 
 router.get("/:id_product", (req, res, next) => {
   const id = req.params.id_product;

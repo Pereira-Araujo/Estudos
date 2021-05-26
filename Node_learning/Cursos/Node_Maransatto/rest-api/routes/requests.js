@@ -8,8 +8,13 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
+  const request = {
+    name:req.body.name,
+    price:req.body.price
+  }
   res.status(201).send({
-    message: "Adiciona novo pedido",
+      message: "Adiciona novos produtos",
+      requestCreated:request
   });
 });
 
