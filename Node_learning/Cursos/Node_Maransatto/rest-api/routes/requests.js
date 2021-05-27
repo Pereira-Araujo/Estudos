@@ -9,8 +9,8 @@ router.get("/", (req, res, next) => {
 
 router.post("/", (req, res, next) => {
   const request = {
-    name:req.body.name,
-    price:req.body.price
+    id_product:req.body.id_product,
+    amount:req.body.amount
   }
   res.status(201).send({
       message: "Adiciona novos produtos",
