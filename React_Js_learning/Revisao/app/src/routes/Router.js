@@ -7,9 +7,12 @@ import AddRecipes from "../pages/AddRecipesPage/index";
 import RecipesDetails from "../pages/RecipesDetailsPage/index";
 import Error from "../pages/ErrorPage/index";
 
+import Header from '../components/Header/index'
+
 const Routes = () => {
   return (
     <BrowserRouter>
+    <Header/>
       <Switch>
         <Route exact path='/login'>
           <Login  />
