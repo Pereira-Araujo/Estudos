@@ -8,10 +8,26 @@ router.get("/", (req, res, next) => {
       return res.status(500).send({ error: error });
     }
     conn.query("SELECT * FROM products;", (error, data, fields) => {
-      if (error) {
-        return res.status(500).send({ error: error });
+      if (error) {return res.status(500).send({ error: error })}
+      const response = {
+        amount: data.length,
+        books: data.map((prod)=>{
+          return{
+            id_product:prod.id_product,
+            name:prod.name,
+            price:prod.price,
+            author:prod.author,
+            image:prod.message,
+            request:{
+              type:'GET',
+              description:'',
+              url:"http://localhost:3000/products/" +prod.id_product
+            }
+
+          }
+        })
       }
-      return res.status(200).send({ data: data });
+      return res.status(200).send(response);
     });
   });
 });
