@@ -1,18 +1,29 @@
-import {useState} from 'react'
+import { useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { signIn } from "../../utils/validations";
+import { primaryColor } from "../../constants/colors";
+import swal from "sweetalert";
 
 const LoginForm = (props) => {
+  const [inform, setInform] = useState("");
 
   const enter = (values) => {
-    setInform(values)
+    setInform(values);
 
-    alert(inform);
+    if (inform !== undefined && inform !== "") return show();
   };
 
-  const [inform, setInform] =useState('')
+  const show = () => {
+    swal({
+      title: "Perfeito",
+      text: "Aproveite nosso site",
+      icon: "success",
+    });
+  };
 
- 
+  useEffect(() => {
+    enter();
+  });
 
   return (
     <>
@@ -23,21 +34,20 @@ const LoginForm = (props) => {
           login: "",
           password: "",
         }}
-        onSubmit={()=>enter(props.values.login)}
+        onSubmit={(initialValues) => enter(initialValues)}
       >
         {() => (
           <Form>
             <div>
               <label>Login</label>
-              <Field id="login"  name="login" type="text" />
+              <Field id="login" name="login" type="text" />
               <ErrorMessage name="login" />
             </div>
             <div>
               <label>Senha</label>
-              <Field id="password" name="password" type="text" />
-              <ErrorMessage name="password"/>
+              <Field id="password" name="password" type="password" />
+              <ErrorMessage name="password" />
             </div>
-
             <button>Entrar</button>
           </Form>
         )}
