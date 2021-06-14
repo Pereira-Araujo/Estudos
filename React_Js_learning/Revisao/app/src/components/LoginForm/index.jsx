@@ -1,24 +1,15 @@
-import { useState, useEffect } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { signIn } from "../../utils/validations";
-import { primaryColor } from "../../constants/colors";
-import swal from "sweetalert";
+import { useEffect } from "react";
+import { Formik, Form, ErrorMessage } from "formik";
+import { signIn } from "../../services/validations";
+import show from "../../services/modal";
+import Button from "@material-ui/core/Button";
+import Logo from "../../assets/logo.png";
+import { Container, TextLogin, BoxLogin } from "./style.js";
 
 const LoginForm = (props) => {
-  const [inform, setInform] = useState("");
-
   const enter = (values) => {
-    setInform(values);
-
-    if (inform !== undefined && inform !== "") return show();
-  };
-
-  const show = () => {
-    swal({
-      title: "Perfeito",
-      text: "Aproveite nosso site",
-      icon: "success",
-    });
+    console.log(values);
+    // return show();
   };
 
   useEffect(() => {
@@ -26,8 +17,8 @@ const LoginForm = (props) => {
   });
 
   return (
-    <>
-      <h1>{props.title}</h1>
+    <Container>
+      <img src={Logo} alt={"Logo Cookenu"} />
       <Formik
         validationSchema={signIn}
         initialValues={{
@@ -38,21 +29,31 @@ const LoginForm = (props) => {
       >
         {() => (
           <Form>
-            <div>
-              <label>Login</label>
-              <Field id="login" name="login" type="text" />
+            <BoxLogin>
+              <TextLogin
+                id="login"
+                name="login"
+                type="text"
+                placeholder="login"
+              />
               <ErrorMessage name="login" />
-            </div>
-            <div>
-              <label>Senha</label>
-              <Field id="password" name="password" type="password" />
-              <ErrorMessage name="password"  />
-            </div>
-            <button>Entrar</button>
+            </BoxLogin>
+            <BoxLogin>
+              <TextLogin
+                id="password"
+                name="password"
+                type="password"
+                placeholder="senha"
+              />
+              <ErrorMessage name="password" />
+            </BoxLogin>
+            <Button color="primary" variant="contained" fullWidth type="submit">
+              Submit
+            </Button>
           </Form>
         )}
       </Formik>
-    </>
+    </Container>
   );
 };
 
