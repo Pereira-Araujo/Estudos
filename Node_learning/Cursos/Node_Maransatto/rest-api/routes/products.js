@@ -20,7 +20,7 @@ router.get("/", (req, res, next) => {
             image:prod.message,
             request:{
               type:'GET',
-              description:'',
+              description:'Retorna um produto',
               url:"http://localhost:3000/products/" +prod.id_product
             }
 
