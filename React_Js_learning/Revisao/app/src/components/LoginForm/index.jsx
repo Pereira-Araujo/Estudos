@@ -46,7 +46,7 @@ const LoginForm = (props) => {
             <div>
               <label>Senha</label>
               <Field id="password" name="password" type="password" />
-              <ErrorMessage name="password" />
+              <ErrorMessage name="password"  />
             </div>
             <button>Entrar</button>
           </Form>
