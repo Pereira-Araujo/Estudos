@@ -1,24 +1,39 @@
 const createCalculator = () => {
-    return{
-      display:document.querySelector('.calculator__display'),
-  
-      initial(){
-        this.clickButtons()
-      },
-  
-      clickButtons(){
-        document.addEventListener('click',((event)=>{
-          const element = event.target
-          if(element.classList.contains('calculator__button')){
-            this.buttonToDisplay(element.innerText)
-          }
-        }).bind(this))
-      },
-  
-      buttonToDisplay(text){
-         this.display.value += text
-      }
-    }
-  }
-  const calculator = createCalculator()
-  calculator.initial()
+  return {
+    display: document.querySelector(".calculator__display"),
+
+    clearDisplay() {
+      this.display.value = "";
+    },
+
+    deleteEach(){
+        this.display.value = this.display.value.slice(0,-1)
+    },
+
+    initial() {
+      this.clickButtons();
+    },
+
+    clickButtons() {
+      document.addEventListener("click", (event) => {
+        let element = event.target;
+        if (element.classList.contains("calculator__button--operation")) {
+          this.buttonToDisplay(element.innerText);
+        }
+        if (element.classList.contains("clear")) {
+          this.clearDisplay();
+          console.log(element.classList.contains("clear"));
+        }
+        if(element.classList.contains('del')){
+          this.deleteEach()
+        }
+      });
+    },
+
+    buttonToDisplay(buttonValue) {
+      this.display.value += buttonValue;
+    },
+  };
+};
+const calculator = createCalculator();
+calculator.initial();
