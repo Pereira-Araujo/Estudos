@@ -1,12 +1,12 @@
-const SignUp = () => {
-    return (
-      <div>
-      <h1>Cadastro</h1>
+import RegisterForm from "../../components/RegisterForm";
+import {Container} from './style'
 
-  
-      </div>
-    );
-  }
-  
-  export default SignUp;
-  
+const SignUp = () => {
+  return (
+    <Container>
+      <RegisterForm />
+    </Container>
+  );
+}
+
+export default SignUp;

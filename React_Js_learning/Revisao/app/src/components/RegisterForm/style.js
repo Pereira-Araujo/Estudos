@@ -30,6 +30,6 @@ export const TextLogin = styled(Field)`
     padding-right: 0;
   }
 `;
-export const ButtonRegister = styled(Button)`
+export const ButtonLogin = styled(Button)`
 margin-top:1rem;
 `

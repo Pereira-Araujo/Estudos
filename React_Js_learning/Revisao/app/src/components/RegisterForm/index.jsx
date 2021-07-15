@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import { Formik, Form, ErrorMessage } from "formik";
-import { signIn } from "../../services/validations";
+import { register } from "../../services/validations";
 import Button from "@material-ui/core/Button";
 import Logo from "../../assets/logo.png";
-import { gotToListRecipes, gotToRegister } from '../../routes/coordinator'
-import { useHistory } from 'react-router-dom'
-import { Container, TextLogin, BoxLogin, ButtonRegister } from "./style.js";
+import {gotToLogin} from  "../../routes/coordinator"
+import { useHistory } from "react-router";
+import { Container, TextLogin, BoxLogin, ButtonLogin } from "./style.js";
 
-const LoginForm = (props) => {
+const RegisterForm = (props) => {
   const history = useHistory()
+
   const enter = (values) => {
     console.log(values);
   };
@@ -21,15 +22,25 @@ const LoginForm = (props) => {
     <Container>
       <img src={Logo} alt={"Logo Cookenu"} />
       <Formik
-        validationSchema={signIn}
+        validationSchema={register}
         initialValues={{
-          login: "",
+          name: "",
+          email:"",
           password: "",
         }}
         onSubmit={(initialValues) => enter(initialValues)}
       >
         {() => (
           <Form>
+              <BoxLogin>
+              <TextLogin
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Nome"
+              />
+              <ErrorMessage name="name" />
+            </BoxLogin>
             <BoxLogin>
               <TextLogin
                 id="login"
@@ -39,6 +50,7 @@ const LoginForm = (props) => {
               />
               <ErrorMessage name="login" />
             </BoxLogin>
+          
             <BoxLogin>
               <TextLogin
                 id="password"
@@ -48,17 +60,17 @@ const LoginForm = (props) => {
               />
               <ErrorMessage name="password" />
             </BoxLogin>
-            <Button onClick={() => gotToListRecipes(history)} color="primary" variant="contained" fullWidth type="submit">
-              Submit
+            <Button color="primary" variant="contained" fullWidth type="submit">
+              Cadastre
             </Button>
           </Form>
         )}
       </Formik>
-      <ButtonRegister onClick={() => gotToRegister(history)} color="primary" variant="outlined" fullWidth type="submit">
-        Cadastre-se
-      </ButtonRegister>
+      <ButtonLogin onClick={()=>gotToLogin(history)} variant="outlined" color="primary" fullWidth type="submit">
+             Login
+      </ButtonLogin>
     </Container>
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
