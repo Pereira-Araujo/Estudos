@@ -6,8 +6,33 @@ const createCalculator = () => {
       this.display.value = "";
     },
 
-    deleteEach(){
-        this.display.value = this.display.value.slice(0,-1)
+    calculate() {
+      let operation = this.display.value;
+
+      try {
+        operation = eval(operation);
+
+        if (!operation) {
+          alert("Conta inválida");
+          return;
+        }
+
+        this.display.value = operation;
+      } catch (e) {
+        alert("Conta inválida");
+      }
+    },
+
+    calculateEnter(){
+      this.display.addEventListener('keyup',event =>{
+        if(event.keyCode === 13){
+          this.calculate()
+        }
+      })
+    },
+
+    deleteEach() {
+      this.display.value = this.display.value.slice(0, -1);
     },
 
     initial() {
@@ -24,8 +49,11 @@ const createCalculator = () => {
           this.clearDisplay();
           console.log(element.classList.contains("clear"));
         }
-        if(element.classList.contains('del')){
-          this.deleteEach()
+        if (element.classList.contains("del")) {
+          this.deleteEach();
+        }
+        if (element.classList.contains("equal")) {
+          this.calculate();
         }
       });
     },
