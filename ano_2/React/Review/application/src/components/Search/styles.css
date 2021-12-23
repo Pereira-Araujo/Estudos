@@ -1,0 +1,19 @@
+input {
+  margin-bottom: 2rem;
+  border: cadetblue 1px solid;
+  padding: 4px;
+  border-radius: 6px;
+  color: rgb(125, 148, 148);
+}
+
+@media (max-width: 1212px) {
+  input {
+    width: 100%;
+    padding: 8px;
+  }
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
