@@ -11,7 +11,7 @@ O objetivo deste repositório é organizar e agrupar meus códigos relacionados 
 
 #### Por enquanto meus estudos publicados nesse repositório estão assim(Clique para saber mais):
 
-[![Ethereum](https://img.shields.io/badge/Blockchain-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white)](https://github.com/Pereira-Araujo/Estudos/ano_2/tree/main/Blockchain/Blockchain_Engineer_Training)
+[![Ethereum](https://img.shields.io/badge/Blockchain-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white)](https://github.com/Pereira-Araujo/Estudos/tree/main/ano_2/Blockchain/Blockchain_Engineer_Training)
 
 
 
