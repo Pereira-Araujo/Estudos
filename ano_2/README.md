@@ -2,7 +2,6 @@
 
 *10/2021 - 10/2022*
 
-<img src="https://img.shields.io/github/languages/count/Pereira-Araujo/Estudos_2?style=flat-square"/> <img src="https://img.shields.io/github/last-commit/Pereira-Araujo/Estudos_2?style=flat-square"/> <img alt="commits/mês" src="https://img.shields.io/github/commit-activity/m/Pereira-Araujo/Estudos_2?style=flat-square"/> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 O objetivo deste repositório é organizar e agrupar meus códigos relacionados ao aprendizado de algumas **linguagens**, **bibliotecas**, **frameworks** e etc.
